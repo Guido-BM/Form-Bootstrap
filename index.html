@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/ec86f5ef17.js" crossorigin="anonymous"></script>
+
+    <title>Pay ME!!</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col m-5" id="window">
+                <form action="https://httpbin.org/post" class="needs-validation" method="post" novalidate>
+                    <div class="row bg-light border rounded-top" id="formHeader">
+                        <div class="col">
+                            <h1>Payment form example</h1>
+                        </div>
+                    </div>
+                    <div class="row border">
+                        <div class="col" id="formBody">
+                            <div class="row mb-4" id="PaymentNumbers">
+                                <div class="col-12 col-md-8">
+                                    <label for="formCardNumber" class="form-label">Card #</label>
+                                    <input class="form-control" type="text" name="formCardNumber" id="formCardNumber"
+                                        placeholder="XXXXXXXXXXXXXX" required>
+                                    <div class="invalid-feedback bg-alert">
+                                        Card number and data needed!!
+                                    </div>
+                                </div>
+                                <div class="col col-md-2">
+                                    <label for="formCvc" class="form-label">CVC:</label>
+                                    <div class="col"> <input class="form-control" type="text" name="formCvc"
+                                            id="formCvc" placeholder="000" required></div>
+
+                                </div>
+                                <div class="col col-md-2">
+                                    <label for="formAmount" class="form-label">Amount</label>
+                                    <input class="form-control" type="text" name="formAmount" id="formAmount"
+                                        placeholder="Amount" required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-12 col-sm-6">
+                                    <label for="formFirstName" class="form-label">First Name</label>
+                                    <input class="form-control" type="text" name="formFirstName" id="formFirstName"
+                                        required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="formLastName" class="form-label">Last Name</label>
+                                    <input class="form-control" type="text" name="formLastName" id="formLastName"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-12 col-md-6">
+                                    <label for="formYourCity" class="form-label">City</label>
+                                    <input class="form-control" type="text" name="formYourCity" id="formYourCity"
+                                        required>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <label for="formSelectState" class="form-label">Select yor State</label>
+                                    <select class="form-select" name="formSelectState" id="formSelectState"
+                                        aria-label="select State">
+                                        <option selected>State</option>
+                                        <option value="alabama">Alabama</option>
+                                        <option value="arkansas">Arkansas</option>
+                                        <option value="alaska">Alaska</option>
+                                        <option value="arizona">Arizona</option>
+                                        <option value="california">California</option>
+                                        <option value="colorado">Colorado</option>
+                                        <option value="virginia">Virginia</option>
+                                        <option value="southDakota">South Dakota</option>
+                                    </select>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <label for="formPostalCode" class="form-label">Postal Code</label>
+                                    <input class="form-control" type="text" name="formPostalCode" id="formPostalCode"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col col-md-6 pt-4 ps-4">
+                                    <p>We accept:</p>
+                                    <div class="btn-group" role="group" aria-label="Payment mode">
+                                        <input type="radio" class="btn-check" value="paypal" name="btnradio"
+                                            id="btnradio1" autocomplete="off" checked>
+                                        <label class="btn btn-outline-primary" for="btnradio1"><i
+                                                class="fa-brands fa-cc-paypal fs-1"></i></label>
+
+                                        <input type="radio" class="btn-check" value="visa" name="btnradio"
+                                            id="btnradio2" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btnradio2"><i
+                                                class="fa-brands fa-cc-visa  fs-1"></i></label>
+
+                                        <input type="radio" class="btn-check" value="amex" name="btnradio"
+                                            id="btnradio3" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btnradio3"><i
+                                                class="fa-brands fa-cc-amex  fs-1"></i></label>
+                                        <input type="radio" class="btn-check" value="googlePay" name="btnradio"
+                                            id="btnradio4" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btnradio4"><i
+                                                class="fa-brands fa-google-pay fs-1"></i></label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="formMessage" class="form-label">Message:</label>
+                                    <textarea class="form-control" name="formMessage" id="formMessage"
+                                        rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row bg-light border rounded-bottom" id="formFooter">
+                        <div class="col">
+                            <div class="row p-2">
+                                <div class="col d-flex justify-content-end m-b4">
+                                    <button class="btn btn-secondary m-2 p-2" type="reset">Cancel</button>
+                                    <button class="btn btn-primary m-2 p-2" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+            </form>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous">
+            </script>
+            <script src="formValidation.js"></script>
+</body>
+
+</html>
